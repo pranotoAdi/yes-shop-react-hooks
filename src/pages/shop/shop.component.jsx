@@ -12,14 +12,14 @@ import { updateCollections } from '../../redux/shop/shop.actions';
 
 class ShopPage extends React.Component{
     
-    unsuscribeFromSnapshot = null;
+    unsubscribeFromSnapshot = null;
 
     componentDidMount() {
         const { updateCollections } = this.props
-        const collectionRef = firestore.collection('collcetions')
+        const collectionRef = firestore.collection('collections')
 
-        this.unsuscribeFromSnapshot = collectionRef.onSnapshot(async snpashot => {
-           const collectionsMap = convertCollectionSnapshotToMap(snpashot);
+        this.unsubscribeFromSnapshot = collectionRef.onSnapshot(async snapshot => {
+           const collectionsMap = convertCollectionSnapshotToMap(snapshot);
            updateCollections(collectionsMap);
         })
     }
