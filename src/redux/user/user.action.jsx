@@ -32,7 +32,7 @@ export const signOutSuccess = () => ({
     type: UserActionTypes.SIGN_IN_SUCCESS
 });
 
-export const signOutFailure = (error) => ({
+export const signOutFailure = error => ({
     type: UserActionTypes.SIGN_IN_FAILURE,
     payload: error
 });
